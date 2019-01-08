@@ -1,0 +1,30 @@
+{
+  "name": "ultra-cli",
+  "version": "1.0.0",
+  "description": "ultra-cli",
+  "main": "index.js",
+  "author": "maixing",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maixing/ultra-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/maixing/ultra-cli/issues"
+  },
+  "bin": {
+    "ultra-cli": "./bin/index.js"
+  },
+  "dependencies": {
+    "commander": "^2.19.0",
+    "git-clone-promise": "^1.0.0",
+    "shelljs": "^0.8.3"
+  },
+  "devDependencies": {
+    "chalk": "^2.4.2",
+    "semver": "^5.6.0"
+  },
+  "engines": {
+    "node": ">=8.0"
+  }
+}
