@@ -43,10 +43,10 @@ program
       shell.rm("-rf", path.join(localpath, ".git"));
       shell.cd(projectName);
       console.log(chalk.green(`工程创建完毕………………`));
-      console.log(chalk.green(`开始安装依赖包………………`));
-      shell.exec('npm install',{silent:true});
+      console.log(chalk.green(`开始安装依赖包,可能需要几分钟，请耐心等待………………`));
+      shell.exec('npm install --registry=https://registry.npm.taobao.org');
       console.log(chalk.green(`依赖包安装完毕!`));
-      console.log(chalk.blue(`请参考README.md，进行项目开发`));
+      console.log(chalk.blue(`请参考${projectName}/README.md，进行项目开发`));
     });
   })
 
