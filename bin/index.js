@@ -31,15 +31,19 @@ if (!shell.which("git")) {
 }
 program
   .version("1.0.0")
-  .command("create [projectName]")
+  .command("create [projectName] [type]")
   .alias("c")
   .description("构建ultra-react模板项目")
-  .action(function(projectName = "ultra-react-demo", options) {
+  .action(function(projectName = "ultra-react-demo",type="js",options) {
     let pwd = shell.pwd();
     let localpath = path.join(pwd.toString(), projectName);
     console.log(chalk.green(`正在创建工程………………`));
     shell.rm('-rf', localpath);
-    clone(`git@github.com:maixing/ultra-react.git`, localpath).then(res => {
+    let prectType = "git@github.com:maixing/ultra-react.git";
+    if(type == "ts"){
+      prectType = "git@github.com:maixing/ultra-react-ts.git"
+    }
+    clone(prectType, localpath).then(res => {
       shell.rm("-rf", path.join(localpath, ".git"));
       shell.cd(projectName);
       console.log(chalk.green(`工程创建完毕………………`));
